@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.black};
 
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const Logo = styled.img`
 
 export const Input = styled.input`
   padding: 10px;
-  border: 2px solid #ff2748;
+  border: 2px solid ${({ theme }) => theme.colors.pink};
   max-width: 80%;
   width: 20rem;
   height: 2.5rem;
@@ -31,7 +31,7 @@ export const Button = styled.button`
   max-width: 80%;
   width: 20rem;
   height: 2.5rem;
-  background-color: #ff2748;
+  background-color: ${({ theme }) => theme.colors.pink};
   border-radius: 4px;
   color: #fff;
   cursor: pointer;

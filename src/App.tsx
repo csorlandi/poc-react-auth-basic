@@ -1,11 +1,18 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import SignIn from './pages/SignIn';
 
-import './App.css';
+import GlobalStyles from './styles/global';
+import theme from './styles/theme';
 
 function App() {
-  return <SignIn />;
+  return (
+    <ThemeProvider theme={theme.default}>
+      <GlobalStyles />
+      <SignIn />
+    </ThemeProvider>
+  );
 }
 
 export default App;
