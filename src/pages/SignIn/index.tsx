@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { AuthContext } from '../../contexts/auth';
 
 import logo from '../../assets/logo.png';
 
 import * as Styles from './styles';
 
 function SignIn() {
+  const { signed, setSigned } = useContext(AuthContext);
+
+  console.log(signed);
+
   return (
     <Styles.Container>
       <Styles.Logo src={logo} alt="CL Logo"/>
       <Styles.Input type="text" defaultValue="test@email.com" />
       <Styles.Input type="password" defaultValue="12345678" />
-      <Styles.Button onClick={() => {}}>
+      <Styles.Button onClick={() => setSigned(true)}>
         Entrar
       </Styles.Button>
     </Styles.Container>
