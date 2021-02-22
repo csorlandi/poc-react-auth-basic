@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import api from "../services/api";
+import history from "../services/history";
 
 interface Props {
   children?: React.ReactNode;
@@ -20,7 +21,7 @@ const initialState = {
   signed: false,
   setSigned: () => {},
   signIn: () => {},
-  loading: false,
+  loading: true,
   user: {
     name: '',
   }
@@ -42,6 +43,8 @@ function AuthProvider({ children }: Props) {
       setUser(JSON.parse(storedUser));
       setSigned(true);
     }
+
+    setLoading(false);
   }, []);
 
   async function signIn() {
@@ -61,6 +64,8 @@ function AuthProvider({ children }: Props) {
       setUser(apiUser);
       setSigned(true);
       setLoading(false);
+
+      history.push('/dashboard');
     } catch(err) {}
   }
 
