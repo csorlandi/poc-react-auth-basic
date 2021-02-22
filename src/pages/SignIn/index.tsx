@@ -7,17 +7,19 @@ import logo from '../../assets/logo.png';
 import * as Styles from './styles';
 
 function SignIn() {
-  const { signed, setSigned } = useContext(AuthContext);
+  const { signIn, loading } = useContext(AuthContext);
 
-  console.log(signed);
+  function handleSignIn() {
+    signIn();
+  }
 
   return (
     <Styles.Container>
       <Styles.Logo src={logo} alt="CL Logo"/>
       <Styles.Input type="text" defaultValue="test@email.com" />
       <Styles.Input type="password" defaultValue="12345678" />
-      <Styles.Button onClick={() => setSigned(true)}>
-        Entrar
+      <Styles.Button onClick={handleSignIn}>
+        { loading ? 'Carregando' : 'Entrar' }
       </Styles.Button>
     </Styles.Container>
   )
