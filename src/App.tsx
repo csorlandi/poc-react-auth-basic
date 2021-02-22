@@ -1,7 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Router } from 'react-router-dom';
 
-import SignIn from './pages/SignIn';
+import history from './services/history';
+import Routes from './routes';
 
 import GlobalStyles from './styles/global';
 import theme from './styles/theme';
@@ -9,8 +11,10 @@ import theme from './styles/theme';
 function App() {
   return (
     <ThemeProvider theme={theme.default}>
-      <GlobalStyles />
-      <SignIn />
+      <Router history={history}>
+        <GlobalStyles />
+        <Routes />
+      </Router>
     </ThemeProvider>
   );
 }
