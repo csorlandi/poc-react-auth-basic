@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import api from "../services/api";
 import history from "../services/history";
 
@@ -76,4 +76,10 @@ function AuthProvider({ children }: Props) {
   )
 }
 
-export { AuthContext, AuthProvider };
+function useAuth() {
+  const context = useContext(AuthContext);
+
+  return context;
+}
+
+export { useAuth, AuthProvider };

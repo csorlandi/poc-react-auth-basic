@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { AuthContext } from '../../contexts/auth';
+import { useAuth } from '../../contexts/auth';
 
 import logo from '../../assets/logo.png';
 
 import * as Styles from './styles';
 
 function SignIn() {
-  const { signIn, loading } = useContext(AuthContext);
+  const { signIn, loading } = useAuth();
 
   function handleSignIn() {
     signIn();
