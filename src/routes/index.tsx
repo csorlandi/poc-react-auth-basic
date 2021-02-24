@@ -12,7 +12,7 @@ export default function Routes() {
   return (
     <Switch>
       <CustomRoute path="/dashboard" component={Dashboard} signed={signed} isPrivate exact />
-      <CustomRoute path="/" component={SignIn} signed={signed} isPrivate={false} />
+      <CustomRoute path="/" component={SignIn} signed={signed} />
     </Switch>
   )
 }
