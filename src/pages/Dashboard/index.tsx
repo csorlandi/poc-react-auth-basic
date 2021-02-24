@@ -5,7 +5,8 @@ import * as Styles from './styles';
 function Dashboard() {
   return (
     <Styles.Container>
-      <Styles.Logo src={logo} alt="CL Logo"/>
+      <Styles.Logo src={logo} alt="Orlab's Logo"/>
+      <Styles.Button>SIGN OUT</Styles.Button>
     </Styles.Container>
   )
 }

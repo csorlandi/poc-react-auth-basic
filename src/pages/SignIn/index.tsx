@@ -15,12 +15,18 @@ function SignIn() {
 
   return (
     <Styles.Container>
-      <Styles.Logo src={logo} alt="CL Logo"/>
-      <Styles.Input type="text" defaultValue="test@email.com" />
-      <Styles.Input type="password" defaultValue="12345678" />
-      <Styles.Button onClick={handleSignIn}>
-        { loading ? 'Carregando' : 'Entrar' }
-      </Styles.Button>
+      <Styles.Content>
+        <Styles.Logo src={logo} alt="Orlab's Logo"/>
+        <Styles.Title>SIGN IN</Styles.Title>
+        <Styles.Description>Enter your access credentials</Styles.Description>
+        <Styles.Label>E-mail</Styles.Label>
+        <Styles.Input type="text" placeholder="example@domain.com" />
+        <Styles.Label>Password</Styles.Label>
+        <Styles.Input type="password" placeholder="****************" />
+        <Styles.Button onClick={handleSignIn}>
+          { loading ? 'Loading ...' : 'SIGN IN' }
+        </Styles.Button>
+      </Styles.Content>
     </Styles.Container>
   )
 }

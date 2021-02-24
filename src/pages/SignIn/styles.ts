@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.background};
 
   display: flex;
   flex-direction: column;
@@ -11,30 +11,71 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const Content = styled.main`
+  width: 514px;
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: 1.5rem;
+  padding: 2rem;
+`;
+
 export const Logo = styled.img`
-  width: 100px;
+  margin: 1rem 0 3rem 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const Title = styled.h1`
+  margin: 0;
+  font-size: 2.375rem;
+  font-family: 'Raleway', sans-serif;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+export const Description = styled.span`
+  display: block;
+  font-size: 0.875rem;
+  font-family: 'Raleway', sans-serif;
+  color: ${({ theme }) => theme.colors.black};
   margin-bottom: 1rem;
 `;
 
-export const Input = styled.input`
-  padding: 10px;
-  border: 2px solid ${({ theme }) => theme.colors.pink};
-  max-width: 80%;
-  width: 20rem;
-  height: 2.5rem;
-  border-radius: 4px;
+export const Label = styled.label`
+  display: block;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: ${({ theme }) => theme.colors.gray};
   margin-bottom: 0.5rem;
 `;
 
-export const Button = styled.button`
+export const Input = styled.input`
   border: 0;
-  max-width: 80%;
-  width: 20rem;
-  height: 2.5rem;
-  background-color: ${({ theme }) => theme.colors.pink};
+  background: ${({ theme }) => theme.colors.inputBackground};
+  padding: 10px;
+  width: 100%;
   border-radius: 4px;
-  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.black};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.gray};
+  }
+`;
+
+export const Button = styled.button`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border: 0;
+  width: 60%;
+  padding: 1rem 0;
+  background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 1rem;
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
+  font-size: 1.125rem;
 
   &:hover {
     transform: scale(1.01);
