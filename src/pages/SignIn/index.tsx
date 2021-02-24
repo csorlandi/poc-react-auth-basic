@@ -20,7 +20,7 @@ function SignIn() {
         <Styles.Title>SIGN IN</Styles.Title>
         <Styles.Description>Enter your access credentials</Styles.Description>
         <Styles.Label>E-mail</Styles.Label>
-        <Styles.Input type="text" placeholder="example@domain.com" />
+        <Styles.Input type="email" placeholder="example@domain.com" />
         <Styles.Label>Password</Styles.Label>
         <Styles.Input type="password" placeholder="****************" />
         <Styles.Button onClick={handleSignIn}>

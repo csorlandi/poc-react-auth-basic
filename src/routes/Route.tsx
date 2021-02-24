@@ -15,6 +15,8 @@ export default function CustomRoute({ isPrivate, signed, ...rest }: Props) {
 
   if (isPrivate && !signed) {
     return <Redirect to="/" />;
+  } else if (!isPrivate && signed) {
+    return <Redirect to="/dashboard" />;
   }
 
   return <Route {...rest} />
